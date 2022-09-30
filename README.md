@@ -14,7 +14,7 @@ This project is open source and you are free take modify and do with as you wish
 - Ruby version >=3.0.0
 
 ### Download 🎰
--  Click this [link](https://github.com/c3c1l1a/OOP_school_library.git) to clone down the source code or download it as a [zip file](https://github.com/c3c1l1a/OOP_school_library/archive/refs/heads/dev.zip)
+-  Click this [link](https://github.com/c3c1l1a/rails_blog.git) to clone down the source code or download it as a [zip file](https://github.com/c3c1l1a/rails_blog/archive/refs/heads/dev.zip)
 
 ## Available Scripts
 
@@ -22,7 +22,7 @@ In the project directory, you can run:
 
 ## Run installation scripts
 > Run the commands below in the terminal or `git bash`.
-`bundle install` - to install gems
+> `bundle install` - to install gems
 
 
 ## Run rails server 
@@ -35,10 +35,10 @@ In the project directory, you can run:
 
 ### Run code linters 🧪
 > Run the commands below in the terminal or `git bash`.
-- `rubocop `  to run the rubocop linter
+> `rubocop `  to run the rubocop linter
 
 ### Run test scripts
-- `rspec `  to run the rubocop linter
+- `rspec `  to run the test scripts
 
 
 ## Authors
