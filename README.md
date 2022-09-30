@@ -1,29 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
 # Rails Blog App
 
 The Blog app is a classic example of a blog website. It is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
@@ -41,8 +15,6 @@ This project is open source and you are free take modify and do with as you wish
 
 ### Download 🎰
 -  Click this [link](https://github.com/c3c1l1a/OOP_school_library.git) to clone down the source code or download it as a [zip file](https://github.com/c3c1l1a/OOP_school_library/archive/refs/heads/dev.zip)
-
-
 
 ## Available Scripts
 
