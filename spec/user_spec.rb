@@ -1,7 +1,7 @@
 require 'rails_helper'
 describe User, type: :model do
   subject do
-    User.create(name: 'Lilly',
+    User.new(name: 'Lilly',
                 photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                 bio: 'Teacher from Poland')
   end

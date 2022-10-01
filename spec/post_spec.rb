@@ -1,14 +1,14 @@
 require 'rails_helper'
 describe Post, type: :model do
   let(:author) do
-    User.create(name: 'Lilly',
+    User.new(name: 'Lilly',
                 photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                 bio: 'Teacher from Poland',
                 posts_counter: 0)
   end
 
   subject do
-    Post.create(
+    Post.new(
       author: author,
       title: 'Hello',
       text: 'This is my first post'

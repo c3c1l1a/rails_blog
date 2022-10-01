@@ -1,14 +1,14 @@
 require 'rails_helper'
 describe Like, type: :model do
   let(:author) do
-    User.create(name: 'Lilly',
+    User.new(name: 'Lilly',
                 photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                 bio: 'Teacher from Poland',
                 posts_counter: 0)
   end
 
   let(:post) do
-    Post.create(
+    Post.new(
       author: author,
       title: 'Hello',
       text: 'This is my first post',
@@ -18,7 +18,7 @@ describe Like, type: :model do
   end
 
   subject do
-    Like.create(post: post, author: author)
+    Like.new(post: post, author: author)
   end
 
   it 'checkes if like is valid' do

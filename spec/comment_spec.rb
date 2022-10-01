@@ -1,14 +1,14 @@
 require 'rails_helper'
 describe Comment, type: :model do
   let(:author) do
-    User.create(name: 'Lilly',
+    User.new(name: 'Lilly',
                 photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                 bio: 'Teacher from Poland',
                 posts_counter: 0)
   end
 
   let(:post) do
-    Post.create(
+    Post.new(
       author: author,
       title: 'Hello',
       text: 'This is my first post',
@@ -18,7 +18,7 @@ describe Comment, type: :model do
   end
 
   subject do
-    Comment.create(post: post, author: author, text: 'This is my comment')
+    Comment.new(post: post, author: author, text: 'This is my comment')
   end
 
   it 'checkes if like is valid' do
