@@ -2,9 +2,9 @@ require 'rails_helper'
 describe Comment, type: :model do
   let(:author) do
     User.new(name: 'Lilly',
-                photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                bio: 'Teacher from Poland',
-                posts_counter: 0)
+             photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+             bio: 'Teacher from Poland',
+             posts_counter: 0)
   end
 
   let(:post) do

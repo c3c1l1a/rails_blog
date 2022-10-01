@@ -2,8 +2,8 @@ require 'rails_helper'
 describe User, type: :model do
   subject do
     User.new(name: 'Lilly',
-                photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                bio: 'Teacher from Poland')
+             photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+             bio: 'Teacher from Poland')
   end
 
   before(:each) do
