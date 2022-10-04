@@ -1,4 +1,3 @@
-class PostsController < ApplicationController 
-	def show
-	end
+class PostsController < ApplicationController
+  def show; end
 end
