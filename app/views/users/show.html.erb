@@ -1,1 +1,32 @@
-<h1>Information for a particular user goes here</h1>
+<div style="border: solid 5px black; 
+						display: flex; 
+						justify-content: space-between; 
+						padding: 2%;
+						margin: 1%">
+	<h1><%= @user.name %></h1>
+	<h4>Number of posts <%= @user.posts_counter %></h4>
+</div>
+
+<div style="border: solid 5px black; 
+						display: flex;
+						flex-direction: column; 
+						justify-content: space-between; 
+						padding: 2%;
+						margin: 1%">
+	<h1>Bio</h1>
+	<p><%= @user.bio %></p>
+</div>
+
+<% @posts.each do |post| %>
+<div style="border: solid 5px black; 
+						display: flex; 
+						flex-direction: column;
+						justify-content: space-between; 
+						padding: 2%;
+						margin: 1%">
+	<h3><%= post.title %></h3>
+	<p><%= post.text %></p>
+</div>
+<% end %>
+
+
