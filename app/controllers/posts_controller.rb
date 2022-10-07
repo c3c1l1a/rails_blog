@@ -6,7 +6,6 @@ class PostsController < ApplicationController
 
     @comments_info = []
     @comments.each do |comment|
-      pp comment
       user = User.find comment.author_id
       @comments_info << {
         user_name: user.name,
@@ -19,6 +18,19 @@ class PostsController < ApplicationController
   def show
     @post = Post.find params[:id]
     @author = User.find @post.author_id
+    @comments_counter = @post.comments_counter
+    @likes_counter = @post.likes_counter
 
+    @comments = Comment.all
+    @comments_info = []
+    @comments.each do |comment|
+      if @post.id = comment.post_id 
+        user = User.find comment.author_id
+        @comments_info << {
+          user_name: user.name,
+          text: comment.text,
+        }
+      end
+    end
   end
 end
