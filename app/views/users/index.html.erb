@@ -1,1 +1,12 @@
-<h1>List all users here </h1>
+<% @users.each do |user| %>
+<div style="border: solid 5px black; 
+						display: flex; 
+						justify-content: space-between; 
+						padding: 2%;
+						margin: 1%">
+	<h1><%= link_to user.name, user %></h1>
+	<h4>Number of posts <%= user.posts_counter %></h4>
+</div>
+<% end %>
+
+
