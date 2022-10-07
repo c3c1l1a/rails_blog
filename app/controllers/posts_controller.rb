@@ -15,6 +15,9 @@ class PostsController < ApplicationController
     end
   end
 
+  def new
+  end
+
   def show
     @post = Post.find params[:id]
     @author = User.find @post.author_id
