@@ -24,7 +24,7 @@
 						justify-content: space-between; 
 						padding: 2%;
 						margin: 1%">
-	<h3><%= link_to post.title %></h3>
+	<h3><%= link_to post.title, "posts/#{post.id}" %></h3>
 	<p><%= post.text %></p>
 
 	<% @comments_info.each do |comment| %>
