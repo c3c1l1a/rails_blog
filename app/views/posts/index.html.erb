@@ -31,13 +31,25 @@
 	</div>
 	<p><%= post.text %></p>
 
-	<button style="display: flex;
-								 padding: 3px 20px;
-								 align-self: flex-start;" >
-			<h2>
-				<%= link_to "Comment", "posts/#{post.id}/comments/new" %>
-			</h2>
-	</button>
+	<div style="display: flex;">
+		<button style="display: flex;
+									 padding: 3px 20px;
+									 align-self: flex-start;" >
+				<h2>
+					<%= link_to "Comment", "posts/#{post.id}/comments/new" %>
+				</h2>
+		</button>
+		<button style="display: flex;
+									 padding: 3px 20px;
+									 align-self: flex-start;" >
+			<%= form_with scope: :post, url:  user_post_likes_path(@user,post) do |form|  %>
+				<h2>
+					<%= form.submit "Add a like" %>
+				</h2>
+			<% end %>
+		</button>
+	</div>
+	
 
 	<% @comments_info.each do |comment| %>
 		<% if post.id == comment[:post_id] %>
