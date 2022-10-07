@@ -45,6 +45,14 @@
 						margin: 1% 10%">
 	<h3><%= link_to post.title, "#{@user.id}/posts" %></h3>
 	<p><%= post.text %></p>
+
+	<button style="display: flex;
+								 padding: 3px 20px;
+								 align-self: flex-start;" >
+			<h2>
+				<%= link_to "Comment", "#{@user.id}/posts/#{post.id}/comments/new" %>
+			</h2>
+	</button>
 </div>
 <% end %>
 
