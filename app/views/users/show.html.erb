@@ -11,17 +11,20 @@
 	</button>
 </div>
 
-
-<div style="border: solid 5px black; 
-						display: flex; 
-						justify-content: space-between; 
-						padding: 2%;
-						margin: 1%">
-	<h1><%= @user.name %></h1>
-	<h4>Number of posts <%= @user.posts_counter %></h4>
-</div>
-
-<div style="border: solid 5px black; 
+<div style="	border: solid 5px black; 
+							display: flex; 
+							flex-direction: column;
+							justify-content: space-between; 
+							padding: 2%;
+							margin: 1%">
+	<div style="display: flex; 
+							justify-content: space-between; 
+							padding: 2%;
+							margin: 1%">
+		<h1><%= @user.name %></h1>
+		<h4>Number of posts <%= @user.posts_counter %></h4>
+	</div>
+	<div style="border: solid 1px black; 
 						display: flex;
 						flex-direction: column; 
 						justify-content: space-between; 
@@ -30,14 +33,16 @@
 	<h1>Bio</h1>
 	<p><%= @user.bio %></p>
 </div>
+</div>
+
 
 <% @posts.each do |post| %>
-<div style="border: solid 5px black; 
+<div style="border: solid 1px black; 
 						display: flex; 
 						flex-direction: column;
 						justify-content: space-between; 
 						padding: 2%;
-						margin: 1%">
+						margin: 1% 10%">
 	<h3><%= link_to post.title, "#{@user.id}/posts" %></h3>
 	<p><%= post.text %></p>
 </div>
