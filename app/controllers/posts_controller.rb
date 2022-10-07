@@ -24,13 +24,13 @@ class PostsController < ApplicationController
     @comments = Comment.all
     @comments_info = []
     @comments.each do |comment|
-      if @post.id = comment.post_id 
-        user = User.find comment.author_id
-        @comments_info << {
-          user_name: user.name,
-          text: comment.text,
-        }
-      end
+      next unless @post.id == comment.post_id
+
+      user = User.find comment.author_id
+      @comments_info << {
+        user_name: user.name,
+        text: comment.text
+      }
     end
   end
 end
