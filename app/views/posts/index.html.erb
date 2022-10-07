@@ -31,6 +31,14 @@
 	</div>
 	<p><%= post.text %></p>
 
+	<button style="display: flex;
+								 padding: 3px 20px;
+								 align-self: flex-start;" >
+			<h2>
+				<%= link_to "Comment", "posts/#{post.id}/comments/new" %>
+			</h2>
+	</button>
+
 	<% @comments_info.each do |comment| %>
 		<% if post.id == comment[:post_id] %>
 			<div style="border: solid 1px black; 
