@@ -24,7 +24,11 @@
 						justify-content: space-between; 
 						padding: 2%;
 						margin: 1%">
-	<h3><%= link_to post.title, "posts/#{post.id}" %></h3>
+	<div style="display: flex; 
+						justify-content: space-between;">
+		<h3><%= link_to post.title, "posts/#{post.id}" %></h3>
+		<h3>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </h3>
+	</div>
 	<p><%= post.text %></p>
 
 	<% @comments_info.each do |comment| %>
