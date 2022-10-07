@@ -15,15 +15,14 @@ class PostsController < ApplicationController
     end
   end
 
-  def new
-  end
+  def new; end
 
   def create
     data = params.require(:post).permit(:title, :text)
-    post = Post.create!(author: current_user, 
-                        title: data[:title], 
+    post = Post.create!(author: current_user,
+                        title: data[:title],
                         text: data[:text],
-                        comments_counter: 0, 
+                        comments_counter: 0,
                         likes_counter: 0)
     post.update_posts_counter_for_user
     redirect_to user_path current_user.id
