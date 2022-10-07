@@ -7,11 +7,11 @@ RSpec.describe 'Post controller', type: :request do
                          bio: 'Teacher from Mexico.',
                          posts_counter: 0)
 
-    @post = Post.create!(author: @user, 
-                          title: 'Hello', 
-                          text: 'This is my first post',
-                          comments_counter: 0, 
-                          likes_counter: 0)
+    @post = Post.create!(author: @user,
+                         title: 'Hello',
+                         text: 'This is my first post',
+                         comments_counter: 0,
+                         likes_counter: 0)
   end
   it 'checks if response status code 200' do
     get "/users/#{@user.id}/posts"
