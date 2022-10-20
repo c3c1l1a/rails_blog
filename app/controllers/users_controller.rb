@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @users = User.all
   end
@@ -10,7 +10,5 @@ class UsersController < ApplicationController
     @posts = Post.where(author_id: @user)
   end
 
-  def create
-
-  end
+  def create; end
 end
