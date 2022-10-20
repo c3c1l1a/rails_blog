@@ -25,7 +25,7 @@ Metrics/PerceivedComplexity:
 Layout/LineLength:
   Max: 200
 Metrics/BlockLength:
-  Max: 50
+  Max: 52
 
 Style/Documentation:
   Enabled: false
