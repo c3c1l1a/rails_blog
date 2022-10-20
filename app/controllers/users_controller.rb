@@ -8,4 +8,8 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
     @posts = Post.where(author_id: @user)
   end
+
+  def create
+    
+  end
 end
