@@ -9,6 +9,12 @@
 				<%= link_to "Add New Post", "#{@user.id}/posts/new" %>
 			</h2>
 	</button>
+	<button style="display: flex;
+								 padding: 10px 20px;" >
+			<h2>
+				<%= link_to "Show all posts", "#{@user.id}/posts" %>
+			</h2>
+	</button>	
 </div>
 
 <div style="	border: solid 5px black; 
@@ -21,6 +27,7 @@
 							justify-content: space-between; 
 							padding: 2%;
 							margin: 1%">
+		<img class="user-image" src=<%= @user.photo %>/>
 		<h1><%= @user.name %></h1>
 		<h4>Number of posts <%= @user.posts_counter %></h4>
 	</div>
@@ -43,7 +50,7 @@
 						justify-content: space-between; 
 						padding: 2%;
 						margin: 1% 10%">
-	<h3><%= link_to post.title, "#{@user.id}/posts" %></h3>
+	<h3><%= link_to post.title, "#{@user.id}/posts/#{post.id}" %></h3>
 	<p><%= post.text %></p>
 </div>
 <% end %>
