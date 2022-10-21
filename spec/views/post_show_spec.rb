@@ -3,17 +3,17 @@ require 'rails_helper'
 RSpec.describe 'User posts index', type: :system do
   before(:each) do
     @user1 = User.create!(name: 'Tom',
-                         photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                         bio: 'Teacher from Mexico.',
-                         posts_counter: 0)
+                          photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                          bio: 'Teacher from Mexico.',
+                          posts_counter: 0)
     @post1 = Post.create!(author: @user1,
-                         title: 'First post',
-                         text: 'This is my first post',
-                         comments_counter: 0,
-                         likes_counter: 0)
-    @comment1 = Comment.create(post: @post1, 
-                         author: @user1, 
-                         text: 'Thanks all!')
+                          title: 'First post',
+                          text: 'This is my first post',
+                          comments_counter: 0,
+                          likes_counter: 0)
+    @comment1 = Comment.create(post: @post1,
+                               author: @user1,
+                               text: 'Thanks all!')
   end
 
   it 'I can see the post title.' do

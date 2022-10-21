@@ -3,24 +3,24 @@ require 'rails_helper'
 RSpec.describe 'User show', type: :system do
   before(:each) do
     @user1 = User.create!(name: 'Tom',
-                         photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                         bio: 'Teacher from Mexico.',
-                         posts_counter: 0)
+                          photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                          bio: 'Teacher from Mexico.',
+                          posts_counter: 0)
     @post1 = Post.create!(author: @user1,
-                         title: 'First post',
-                         text: 'This is my first post',
-                         comments_counter: 0,
-                         likes_counter: 0)
+                          title: 'First post',
+                          text: 'This is my first post',
+                          comments_counter: 0,
+                          likes_counter: 0)
     @post2 = Post.create!(author: @user1,
-                         title: 'Second post',
-                         text: 'This is my second post',
-                         comments_counter: 0,
-                         likes_counter: 0)
+                          title: 'Second post',
+                          text: 'This is my second post',
+                          comments_counter: 0,
+                          likes_counter: 0)
     @post3 = Post.create!(author: @user1,
-                         title: 'Third post',
-                         text: 'This is my third post',
-                         comments_counter: 0,
-                         likes_counter: 0)
+                          title: 'Third post',
+                          text: 'This is my third post',
+                          comments_counter: 0,
+                          likes_counter: 0)
   end
 
   it 'can see the user profile picture' do
@@ -28,7 +28,7 @@ RSpec.describe 'User show', type: :system do
     sleep(5)
     click_link @user1.name
     sleep(5)
-    image=find(:xpath, "//img[@class='user-image']")
+    image = find(:xpath, "//img[@class='user-image']")
     image['src'].should eq('https://unsplash.com/photos/F_-0BxGuVvo/')
   end
 
@@ -70,7 +70,7 @@ RSpec.describe 'User show', type: :system do
     visit users_path
     sleep(5)
     click_link @user1.name
-    sleep(5) 
+    sleep(5)
     click_link 'Show all posts'
     sleep(5)
 
@@ -83,10 +83,10 @@ RSpec.describe 'User show', type: :system do
     visit users_path
     sleep(5)
     click_link @user1.name
-    sleep(5) 
+    sleep(5)
     click_link @post1.title
     sleep(5)
-    
+
     expect(page).to have_content(@post1.title)
   end
 
@@ -94,10 +94,10 @@ RSpec.describe 'User show', type: :system do
     visit users_path
     sleep(5)
     click_link @user1.name
-    sleep(5) 
+    sleep(5)
     click_link 'Show all posts'
     sleep(5)
-  
+
     expect(page).to have_content(@post1.title)
     expect(page).to have_content(@post2.title)
     expect(page).to have_content(@post3.title)

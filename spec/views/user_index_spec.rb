@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'User index', type: :system do
   before(:each) do
     @user1 = User.create!(name: 'Tom',
-                         photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-                         bio: 'Teacher from Mexico.',
-                         posts_counter: 0)
+                          photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                          bio: 'Teacher from Mexico.',
+                          posts_counter: 0)
   end
 
   it 'can see username of all other users' do
@@ -17,7 +17,7 @@ RSpec.describe 'User index', type: :system do
   it 'can seee profile picture for each user' do
     visit users_path
     sleep(5)
-    image=find(:xpath, "//img[@class='user-image']")
+    image = find(:xpath, "//img[@class='user-image']")
     image['src'].should eq('https://unsplash.com/photos/F_-0BxGuVvo/')
   end
 
@@ -33,8 +33,4 @@ RSpec.describe 'User index', type: :system do
     click_link @user1.name
     expect(page).to have_content(@user1.bio)
   end
-
-
-
-  
 end
