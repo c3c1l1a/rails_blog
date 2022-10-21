@@ -1,18 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find params[:user_id]
-    @posts = Post.where(author_id: params[:user_id])
-    @comments = Comment.all.includes(:author)
-
-    @comments_info = []
-    @comments.each do |comment|
-      user = comment.author
-      @comments_info << {
-        user_name: user.name,
-        text: comment.text,
-        post_id: comment.post_id
-      }
-    end
+    @posts = @user.posts.includes(:comments)
   end
 
   def new; end

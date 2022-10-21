@@ -52,17 +52,15 @@
 	</div>
 	
 
-	<% @comments_info.each do |comment| %>
-		<% if post.id == comment[:post_id] %>
+	<% post.comments.includes(:author).each do |comment| %>
 			<div style="border: solid 1px black; 
 									display: flex; 
 									flex-direction: column;
 									justify-content: space-between; 
 									padding: 1%;
 									margin: 0%">
-				<h3><%= comment[:user_name] %>: <%= comment[:text] %></h3>
+				<h3><%= comment.author.name %>: <%= comment.text %></h3>
 			</div>
-		<% end %>
 	<% end %>
 </div>
 <% end %>
