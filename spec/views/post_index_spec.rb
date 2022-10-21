@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User posts', type: :system do
+RSpec.describe 'User posts index', type: :system do
   before(:each) do
     @user1 = User.create!(name: 'Tom',
                          photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
