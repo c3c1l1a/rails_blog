@@ -2,11 +2,12 @@ class PostsController < ApplicationController
   def index
     @user = User.find params[:user_id]
     @posts = Post.where(author_id: params[:user_id])
-    @comments = Comment.all
+    @comments = Comment.all.includes(:author)
+
 
     @comments_info = []
     @comments.each do |comment|
-      user = User.find comment.author_id
+      user = comment.author
       @comments_info << {
         user_name: user.name,
         text: comment.text,
