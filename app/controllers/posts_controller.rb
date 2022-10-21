@@ -4,7 +4,6 @@ class PostsController < ApplicationController
     @posts = Post.where(author_id: params[:user_id])
     @comments = Comment.all.includes(:author)
 
-
     @comments_info = []
     @comments.each do |comment|
       user = comment.author
