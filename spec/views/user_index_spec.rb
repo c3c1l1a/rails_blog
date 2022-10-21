@@ -11,7 +11,7 @@ RSpec.describe 'User index', type: :system do
   it 'can see username of all other users' do
     visit users_path
     sleep(5)
-    expect(page).to have_content('Tom')
+    expect(page).to have_content(@user1.name)
   end
 
   it 'can seee profile picture for each user' do
@@ -25,6 +25,13 @@ RSpec.describe 'User index', type: :system do
     visit users_path
     sleep(5)
     expect(page).to have_content(@user1.posts_counter)
+  end
+
+  it 'When I click on a user, I am redirected to that users show page' do
+    visit users_path
+    sleep(5)
+    click_link @user1.name
+    expect(page).to have_content(@user1.bio)
   end
 
 
