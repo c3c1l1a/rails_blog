@@ -27,6 +27,7 @@ Layout/LineLength:
 Metrics/BlockLength:
   Max: 200
 
+
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
