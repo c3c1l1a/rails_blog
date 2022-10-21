@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     namespace :v1 do 
       resources :users, only: %i[index show] do
         resources :posts, only: %i[index show] do 
-          resources :comments, only: %i[index new]
+          resources :comments, only: %i[index new show]
         end
       end
     end

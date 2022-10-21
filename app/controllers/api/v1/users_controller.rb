@@ -5,12 +5,12 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
+    @user = @users.find params[:id]
     render :json => @user
   end 
 
   private 
   def set_users 
     @users = User.all
-    @user = @users.find params[:id]
   end
 end
