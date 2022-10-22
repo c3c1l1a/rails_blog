@@ -6,11 +6,10 @@ class Comment < ApplicationRecord
     post.increment!(:comments_counter)
   end
 
-  def as_json(options={})
-    { 
-      :id => self.id,
-      :photo => self.text,
+  def as_json(_options = {})
+    {
+      id: id,
+      photo: text
     }
   end
-
 end

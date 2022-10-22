@@ -14,13 +14,13 @@ class User < ApplicationRecord
     posts.order('created_at Desc').limit(3)
   end
 
-  def as_json(options={})
-    { 
-      :id => self.id,
-      :name => self.name,
-        :photo => self.photo,
-        :posts_counter => self.posts_counter,
-      
+  def as_json(_options = {})
+    {
+      id: id,
+      name: name,
+      photo: photo,
+      posts_counter: posts_counter
+
     }
   end
 end
