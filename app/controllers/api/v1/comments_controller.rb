@@ -1,4 +1,5 @@
 class Api::V1::CommentsController < ApplicationController
+	load_and_authorize_resource
 	before_action :set_users
 	def index
 		comments = @post.comments
@@ -11,11 +12,12 @@ class Api::V1::CommentsController < ApplicationController
 	end
 
 	def create
-		comment = Comment.new(@post, @user, Text: 'api comment',)
+		comment = Comment.new(@post, current_user, Text: params.require(:comment).permit(:text) )
 		if comment.save
-	    render json: CategoryRepresenter.new(comment).as_json, status: :created
+	    render json: coment, status: :created
 	  else
 	    render json: comment.errors, status: :unprocessable_entity
+	  end
 	end
 
 	private 
