@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :author, class_name: 'User'
-  has_many :comments, foreign_key: :comment_id
-  has_many :likes, foreign_key: :like_id
+  has_many :comments
+  has_many :likes
 
   validates :title, presence: true, length: { maximum: 250 }
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
@@ -13,5 +13,14 @@ class Post < ApplicationRecord
 
   def recent_comments
     comments.order('created_at Desc').limit(5)
+  end
+
+  def as_json(_options = {})
+    {
+      id: id,
+      name: title,
+      photo: text,
+      posts_counter: comments_counter
+    }
   end
 end
