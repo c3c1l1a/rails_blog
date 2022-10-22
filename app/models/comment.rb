@@ -5,4 +5,11 @@ class Comment < ApplicationRecord
   def update_comments_counter_for_post
     post.increment!(:comments_counter)
   end
+
+  def as_json(_options = {})
+    {
+      id: id,
+      photo: text
+    }
+  end
 end

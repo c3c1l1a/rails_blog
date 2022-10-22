@@ -51,7 +51,7 @@
 	</div>
 	
 
-	<% @comments_info.each do |comment| %>
+	<% post.comments.each do |comment| %>
 		<% if post.id == comment[:post_id] %>
 			<div style="border: solid 1px black; 
 									display: flex; 
